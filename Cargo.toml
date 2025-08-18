@@ -1,0 +1,28 @@
+[package]
+name = "HolyGrail"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+opt-level = "z"     # Optimize for size.
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = true        # Automatically strip symbols from the binary.
+
+[dependencies]
+# Core functionality
+anyhow = "1.0.44"                                          # Error handling (used in utils.rs)
+clap = { version = "4.5.1", features = ["derive"] }       # CLI argument parsing
+goblin = "0.9.3"                                          # PE file parsing
+log = "0.4.14"                                            # Logging
+simplelog = "0.10.0"                                      # Log configuration
+serde = { version = "1.0.130", features = ["derive"] }    # JSON serialization
+serde_json = { version = "1.0", features = ["preserve_order"] }  # JSON output
+sha1 = "0.10"                                             # SHA1 hashing for certificates
+sha2 = "0.10"                                             # SHA256 hashing for files
+hex = "0.4"                                               # Hex encoding
+walkdir = "2.4.0"                                         # Directory traversal
+win32-version-info = "0.1.0"                             # PE version info extraction
+x509-parser = "0.15"        
