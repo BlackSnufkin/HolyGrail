@@ -67,4 +67,3 @@ Policies/
 - **Red teams**: surface legitimate, loadable drivers with the primitives you need.
 - **Researchers**: map new candidates and study real-world attack surfaces.
 - **Defenders (optional)**: audit your fleet for BYOVD risk.
-```
