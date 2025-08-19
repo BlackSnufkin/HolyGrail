@@ -5,7 +5,7 @@ A BYOVD hunter for finding the HolyGrail driver - Windows drivers suitable for B
 ## Install
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/BlackSnufkin/HolyGrail
 cd HolyGrail
 cargo build --release
 ```
@@ -25,16 +25,17 @@ HolyGrail.exe -d "C:\path\to\driver.sys" -o ".\out" -p ".\Policies" --json
 ## CLI
 
 ```
-Usage: HolyGrail.exe [OPTIONS] --driver <DRIVER_FILE>
+Usage: HolyGrail.exe [OPTIONS]
 
 Options:
-  -d, --driver <DRIVER_FILE>         Path to the driver file (.sys/.dll) to analyze
-  -o, --output <OUTPUT_DIRECTORY>    Output directory for analysis results [default: .\Analysis]
-  -p, --policies <POLICY_DIRECTORY>  Path to directory containing policy files [default: Policies]
-  -j, --json                         Output results in JSON instead of text
-  -v, --verbose                      Enable verbose logging
-  -h, --help                         Print help
-  -V, --version                      Print version
+  -d, --driver <DRIVER_FILE>          Path to the driver file (.sys) to analyze
+  -D, --directory <DRIVER_DIRECTORY>  Directory containing driver files to analyze
+  -o, --output <OUTPUT_DIRECTORY>     Output directory for analysis results [default: .\Analysis]
+  -p, --policies <POLICY_DIRECTORY>   Path to directory containing policy files [default: Policies]
+  -j, --json                          Output results in JSON format instead of text
+  -v, --verbose                       Enable verbose logging
+  -h, --help                          Print help
+  -V, --version                       Print version
 ```
 
 ## What it checks
